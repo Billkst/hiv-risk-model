@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.conda/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志
+logs/
+*.log
+
+# 输出
+outputs/
+*.png
+*.jpg
+*.pdf
+
+# Git
+.git/
+.gitignore
+
+# 文档
+docs_for_review/
+*.md
+!README.md
+
+# 测试
+tests/
+test_*.py
+*_test.py
+
+# 其他
+.DS_Store
+.env
+*.bak
+*.tmp

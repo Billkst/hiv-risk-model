@@ -1,0 +1,33 @@
+
+# File Reorganization Configuration
+
+reorganization:
+  # Project root directory (required)
+  project_root: "."
+  
+  # Backup settings
+  backup:
+    enabled: true
+    path: null  # Auto-generated if null
+    retention_days: 7
+  
+  # Symbolic link settings
+  symbolic_links:
+    enabled: true
+    use_relative_paths: true
+  
+  # Dry run mode (no actual changes)
+  dry_run: false
+  
+  # Auto-confirm file deletions
+  auto_confirm_deletes: false
+  
+  # Preserve file timestamps
+  preserve_timestamps: true
+  
+  # Logging settings
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+    console: true
+    file: true
+    file_path: ".reorg_log_{timestamp}.log"

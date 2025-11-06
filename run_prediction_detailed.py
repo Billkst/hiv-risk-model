@@ -1,0 +1,1 @@
+dev/scripts/run_prediction_detailed.py

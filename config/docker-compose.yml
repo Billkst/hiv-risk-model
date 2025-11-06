@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  hiv-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hiv-risk-api:v1.1.0
+    container_name: hiv-api
+    ports:
+      - "5000:5000"
+    environment:
+      - USE_ENHANCED_MODEL=true
+      - PORT=5000
+      - HOST=0.0.0.0
+      - DEBUG=false
+    volumes:
+      - ./logs:/app/logs
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - hiv-network
+
+networks:
+  hiv-network:
+    driver: bridge

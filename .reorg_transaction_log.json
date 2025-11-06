@@ -1,0 +1,16 @@
+{
+  "reorganization_id": "reorg_20251106_115449",
+  "start_time": "2025-11-06T11:54:49.902329",
+  "operations": [
+    {
+      "timestamp": "2025-11-06T11:54:51.490582",
+      "operation": "move",
+      "source": "reorg_tool/README.md",
+      "destination": "docs/user/README.md",
+      "success": false,
+      "error_message": "Destination already exists: docs/user/README.md",
+      "checksum_before": null,
+      "checksum_after": null
+    }
+  ]
+}

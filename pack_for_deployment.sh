@@ -1,0 +1,1 @@
+dev/scripts/pack_for_deployment.sh

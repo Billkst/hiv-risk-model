@@ -1,0 +1,1 @@
+dev/scripts/prepare_deployment.sh

@@ -1,0 +1,25 @@
+identity:
+  author: billkst
+  name: hiv_risk
+  label:
+    en_US: HIV Risk Assessment
+    zh_Hans: HIV风险评估
+  description:
+    en_US: Comprehensive HIV risk assessment tools with AI-powered feature analysis
+    zh_Hans: 综合HIV风险评估工具集，提供AI驱动的特征分析
+  icon: icon.svg
+  tags:
+    - medical
+    - productivity
+
+tools:
+  - tools/debug_test_simple.yaml
+  - tools/debug_test.yaml
+  - tools/risk_prediction.yaml
+  - tools/batch_prediction.yaml
+  - tools/correlation_analysis.yaml
+  - tools/model_info.yaml
+
+extra:
+  python:
+    source: provider/hiv_risk_provider.py

@@ -1,0 +1,25 @@
+identity:
+  name: model_info
+  author: billkst
+  label:
+    en_US: Model Information
+    zh_Hans: 模型信息查询
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Query HIV risk prediction model version, performance metrics, and configuration
+    zh_Hans: 查询HIV风险预测模型的版本、性能指标和配置信息
+  llm: |
+    Retrieves information about the HIV risk prediction model including:
+    - Model version and type
+    - Performance metrics (accuracy, precision, recall, F1 score)
+    - Training information (dataset size, training date)
+    - Model configuration (attention mechanism, feature count)
+    Use this tool when the user asks about the model's capabilities or reliability.
+
+parameters: []
+
+extra:
+  python:
+    source: tools/model_info.py

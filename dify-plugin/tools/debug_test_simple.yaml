@@ -1,0 +1,19 @@
+identity:
+  name: debug_test_simple
+  author: billkst
+  label:
+    en_US: Simple Test
+    zh_Hans: 简单测试
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Simplest test tool with no parameters
+    zh_Hans: 最简单的测试工具，无需参数
+  llm: Simplest test tool that returns a fixed message without any parameters.
+
+parameters: []
+
+extra:
+  python:
+    source: tools/debug_test_simple.py

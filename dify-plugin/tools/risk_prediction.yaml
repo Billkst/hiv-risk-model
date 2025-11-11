@@ -1,0 +1,39 @@
+identity:
+  name: risk_prediction
+  author: billkst
+  label:
+    en_US: HIV Risk Prediction
+    zh_Hans: HIV风险预测
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Predict HIV risk level with feature contribution analysis based on county medical data
+    zh_Hans: 基于县区医疗数据预测HIV风险等级并分析关键影响因素
+  llm: |
+    Predicts HIV risk level (1-5) for a county based on medical features including 
+    infection rate, survival count, new reports, and intervention coverage. 
+    Returns risk level, confidence score, and Top 10 key contributing features with 
+    their contribution percentages and medical explanations.
+    Use this tool when the user asks to assess HIV risk for a specific county or region.
+
+parameters:
+  - name: region_data
+    type: string
+    required: true
+    label:
+      en_US: Region Data (JSON)
+      zh_Hans: 区域数据（JSON格式）
+    human_description:
+      en_US: JSON string containing all county medical features (110 fields)
+      zh_Hans: 包含县区所有医疗特征的JSON字符串（110个字段）
+    llm_description: |
+      JSON string containing county medical data with all 110 fields.
+      Must include at minimum: 区县, 感染率, 存活数, 新报告
+      Example: {"区县": "某县", "感染率": 0.5, "存活数": 100, "新报告": 10, ...}
+      The tool will automatically extract all available fields for prediction.
+    form: llm
+
+extra:
+  python:
+    source: tools/risk_prediction.py

@@ -1,0 +1,31 @@
+version: 0.0.1
+type: plugin
+author: billkst
+name: hiv_risk_predictor
+label:
+  en_US: HIV Risk Predictor
+  zh_Hans: HIV风险预测器
+description:
+  en_US: AI-powered HIV risk assessment tool with feature contribution analysis based on attention mechanism
+  zh_Hans: 基于注意力机制的HIV风险智能评估工具，提供特征贡献度分析
+icon: icon.svg
+resource:
+  memory: 536870912  # 512MB
+  permission: {}
+plugins:
+  tools:
+    - provider/hiv_risk.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2024-11-07T00:00:00.000000+08:00
+privacy: PRIVACY.md
+tags:
+  - medical
+  - productivity

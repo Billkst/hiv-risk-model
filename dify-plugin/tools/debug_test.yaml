@@ -1,0 +1,31 @@
+identity:
+  name: debug_test
+  author: billkst
+  label:
+    en_US: Debug Test
+    zh_Hans: 调试测试
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Simple test tool to verify plugin is working
+    zh_Hans: 简单的测试工具，验证插件是否正常工作
+  llm: Simple test tool that echoes back the input to verify the plugin is working correctly.
+
+parameters:
+  - name: test_input
+    type: string
+    required: false
+    label:
+      en_US: Test Input
+      zh_Hans: 测试输入
+    human_description:
+      en_US: Any test string
+      zh_Hans: 任意测试字符串
+    llm_description: Any test string to echo back
+    form: llm
+    default: "default test value"
+
+extra:
+  python:
+    source: tools/debug_test.py

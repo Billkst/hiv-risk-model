@@ -1,0 +1,71 @@
+# 虚拟环境
+venv*
+venv_py312/
+.venv/
+env/
+ENV/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# 测试相关
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+test_data.csv
+test_upload_data.csv
+test_local.py
+debug.log
+
+# 开发工具
+dify-plugin-*
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# 配置文件
+.env
+.env.example
+
+# 文档
+EXAMPLES.md
+EXAMPLES_CN.md
+TESTING.md
+DEPLOYMENT.md
+DEPLOYMENT_CN.md
+PROJECT_SUMMARY.md
+快速开始.md
+项目总结.md
+远程调试指南.md
+
+# 脚本
+setup_env_local.sh
+setup_env.sh
+start_debug_conda.sh
+start_debug_local.sh
+start_debug.sh
+package.py
+package.sh
+package_plugin.sh
+rebuild_and_test.sh
+verify_package.py
+
+# 工作目录
+working/
+
+# 旧的插件包
+*.difypkg
+*.difpkg

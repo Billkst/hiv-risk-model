@@ -1,0 +1,63 @@
+identity:
+  name: batch_prediction
+  author: billkst
+  label:
+    en_US: Batch Risk Prediction
+    zh_Hans: 批量风险预测
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Predict HIV risk levels for multiple counties with feature contribution analysis
+    zh_Hans: 对多个县区进行HIV风险等级预测并分析关键影响因素
+  llm: |
+    Performs batch HIV risk prediction for multiple counties at once.
+    Each county's prediction includes risk level (1-5), confidence score, and Top 10 contributing features.
+    Supports CSV format or JSON array input.
+    Use this tool when the user wants to assess risk for multiple counties simultaneously.
+
+parameters:
+  - name: data_list
+    type: string
+    required: true
+    label:
+      en_US: Data List (JSON Array)
+      zh_Hans: 数据列表（JSON数组）
+    human_description:
+      en_US: JSON array containing data for multiple counties (110 fields each)
+      zh_Hans: 包含多个县区数据的JSON数组（每个县区110个字段）
+    llm_description: |
+      JSON array containing multiple county records, each with all 110 medical fields.
+      Example: [{"区县": "县A", "感染率": 0.5, "存活数": 100, ...}, {"区县": "县B", ...}]
+      The tool will automatically extract all available fields from each record.
+    form: llm
+
+  - name: batch_size
+    type: number
+    required: false
+    label:
+      en_US: Batch Size
+      zh_Hans: 批处理大小
+    human_description:
+      en_US: Number of counties to process in each batch (default 10)
+      zh_Hans: 每批处理的县区数量（默认10）
+    llm_description: Number of counties to process at once for optimization (default 10)
+    form: llm
+    default: 10
+
+  - name: include_progress
+    type: boolean
+    required: false
+    label:
+      en_US: Include Progress Updates
+      zh_Hans: 包含进度更新
+    human_description:
+      en_US: Whether to provide progress updates during processing (default true)
+      zh_Hans: 是否在处理过程中提供进度更新（默认true）
+    llm_description: Set to true to receive progress updates during batch processing
+    form: llm
+    default: true
+
+extra:
+  python:
+    source: tools/batch_prediction.py

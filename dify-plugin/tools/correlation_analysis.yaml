@@ -1,0 +1,64 @@
+identity:
+  name: correlation_analysis
+  author: billkst
+  label:
+    en_US: Correlation Analysis
+    zh_Hans: 相关性分析
+  icon: icon.svg
+
+description:
+  human:
+    en_US: Analyze correlations between HIV risk factors using Pearson correlation coefficient
+    zh_Hans: 使用Pearson相关系数分析HIV风险因素之间的相关性
+  llm: |
+    Analyzes correlations between HIV risk factors to identify significant relationships.
+    Calculates Pearson correlation coefficients and p-values to determine statistical significance.
+    Returns pairs of features with strong positive or negative correlations.
+    Use this tool when the user wants to understand relationships between different risk factors.
+
+parameters:
+  - name: feature_data
+    type: string
+    required: true
+    label:
+      en_US: Feature Data (JSON)
+      zh_Hans: 特征数据（JSON格式）
+    human_description:
+      en_US: JSON string containing feature data for correlation analysis
+      zh_Hans: 包含用于相关性分析的特征数据的JSON字符串
+    llm_description: |
+      JSON string with feature data. Can be either:
+      1. A single county's features as a dictionary
+      2. Multiple counties' features as a list of dictionaries
+      Example: {"infection_rate": 50.5, "survival_count": 1000, "new_reports": 100}
+    form: llm
+
+  - name: correlation_threshold
+    type: number
+    required: false
+    label:
+      en_US: Correlation Threshold
+      zh_Hans: 相关性阈值
+    human_description:
+      en_US: Minimum absolute correlation coefficient to report (0-1, default 0.5)
+      zh_Hans: 报告的最小绝对相关系数（0-1，默认0.5）
+    llm_description: Minimum absolute correlation coefficient to include in results (default 0.5)
+    form: llm
+    default: 0.5
+
+  - name: p_value_threshold
+    type: number
+    required: false
+    label:
+      en_US: P-value Threshold
+      zh_Hans: P值阈值
+    human_description:
+      en_US: Maximum p-value for statistical significance (default 0.05)
+      zh_Hans: 统计显著性的最大p值（默认0.05）
+    llm_description: Maximum p-value to consider correlation statistically significant (default 0.05)
+    form: llm
+    default: 0.05
+
+extra:
+  python:
+    source: tools/correlation_analysis.py
